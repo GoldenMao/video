@@ -56,7 +56,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # 'DIRS': [os.path.join(BASE_DIR, 'templates')],
         # 找到index.html的配置
-        'DIRS': [os.path.join(BASE_DIR, 'frontend/mypro/dist')],
+        'DIRS': [os.path.join(BASE_DIR, 'frontend/dist')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -130,9 +130,9 @@ STATIC_URL = '/static/'
 
 # Add for vuejs
 # # 方法1
-# STATIC_ROOT = os.path.join(BASE_DIR, "frontend/mypro/dist/static/")
+# STATIC_ROOT = os.path.join(BASE_DIR, "frontend/dist/static/")
 # STATICFILES_DIRS = [
-#     # os.path.join(BASE_DIR, "frontend/mypro/dist",),
+#     # os.path.join(BASE_DIR, "frontend/dist",),
 #     ('css', os.path.join(STATIC_ROOT, 'css').replace('\\', '/')),
 #     ('js', os.path.join(STATIC_ROOT, 'js').replace('\\', '/')),
 #     # ('img', os.path.join(STATIC_ROOT, 'img').replace('\\','/')),
@@ -140,15 +140,15 @@ STATIC_URL = '/static/'
 
 # # 方法2
 # STATICFILES_DIRS = [
-#     # os.path.join(BASE_DIR, "frontend/mypro/dist",), # 无法读取js, css 文件
-#     ('css', os.path.join(BASE_DIR, "frontend/mypro/dist/static/css/",).replace('\\', '/')),  # 可以读取
-#     ('js', os.path.join(BASE_DIR, "frontend/mypro/dist/static/js/",).replace('\\', '/'))  # 可以读取
+#     # os.path.join(BASE_DIR, "frontend/dist",), # 无法读取js, css 文件
+#     ('css', os.path.join(BASE_DIR, "frontend/dist/static/css/",).replace('\\', '/')),  # 可以读取
+#     ('js', os.path.join(BASE_DIR, "frontend/dist/static/js/",).replace('\\', '/'))  # 可以读取
 #
 # ]
 #
 
 # 方法3
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "frontend/mypro/dist/static/")
+    os.path.join(BASE_DIR, "frontend/dist/static/")
 
 ]
