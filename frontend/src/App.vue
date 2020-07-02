@@ -1,30 +1,37 @@
 <template>
   <div id="app">
-    <div>
-      <router-link to="/home">首页</router-link>
-      <router-link to="/about">关于</router-link>
+    <div id="head">
+      <Header/>
+    </div>
+    <div id="container">
       <router-view></router-view>
     </div>
+    <div id="footer"></div>
 
   </div>
 </template>
 
 <script>
-  // import NotFound from "./components/common/notfound404/NotFound";
+  import Header from "components/content/header/Header";
 
   export default {
     name: 'App',
     components: {
-
+      Header
     }
   }
 </script>
 
 <style>
   @import "assets/css/base.css";
-  #app{
+
+  #app {
     width: 1190px;
     height: 100%;
-    margin:0 auto;
+    margin: 0 auto;
+  }
+
+  #container{
+    margin-top: 20px;
   }
 </style>
