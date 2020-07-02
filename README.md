@@ -1,4 +1,4 @@
-# mypro
+# frontend
 
 ## Project setup
 ```
