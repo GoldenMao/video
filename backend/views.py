@@ -11,9 +11,9 @@ def getHomeData(request):
     # queryset = models.Users.objects.all()
     # 模拟数据 queryset
     queryset = [
-        {"userId": 1, "userName": "zhang", "age": 18, "emial": "zhang@111.com"},
-        {"userId": 2, "userName": "wang", "age": 13, "emial": "wang@121.com"},
-        {"userId": 3, "userName": "fang", "age": 19, "emial": "fang@163.com"},
+        {"userId": 1, "userName": "zhang", "age": 18, "email": "zhang@111.com"},
+        {"userId": 2, "userName": "wang", "age": 13, "email": "wang@121.com"},
+        {"userId": 3, "userName": "fang", "age": 19, "email": "fang@163.com"},
     ]
     resList = []
     # 对数据库查询的数据进行处理成前端需要的格式后,以json格式发给前端
@@ -21,7 +21,7 @@ def getHomeData(request):
         resList += [{
             "id": i["userId"],
             "name": i["userName"],
-            "email": i["emial"],
+            "email": i["email"],
         }]
     print(resList)
     return JsonResponse(resList, safe=False)

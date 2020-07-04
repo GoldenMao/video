@@ -25,5 +25,14 @@
   a {
     text-align: center;
     width: 60px;
+    height: 35px;
+    line-height: 35px;
+    transition: all .28s ease-in .1s;
+  }
+  a:hover{
+    background-color: coral;
+    border-radius: 5px;
+    transform:scale(1.1);
+    color: #fffccf;
   }
 </style>

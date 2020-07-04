@@ -3,7 +3,10 @@ import Router from 'vue-router'
 
 // 懒加载
 const Home = () => import('views/home/Home')
-const About = () => import('views/about/About')
+const Movie = () => import('views/movie/Movie')
+const Tvplay = () => import('views/tvplay/Tvplay')
+const Cartoon = () => import('views/cartoon/Cartoon')
+const Special = () => import('views/special/Special')
 
 
 
@@ -23,10 +26,31 @@ const router = new Router({
       }
     },
     {
-      path: '/about',
-      component: About,
+      path: '/movie',
+      component: Movie,
       meta: {
-        title: '关于'
+        title: '电影'
+      }
+    },
+    {
+      path: '/tvplay',
+      component: Tvplay,
+      meta: {
+        title: '电视剧'
+      }
+    },
+    {
+      path: '/cartoon',
+      component: Cartoon,
+      meta: {
+        title: '动漫'
+      }
+    },
+    {
+      path: '/special',
+      component: Special,
+      meta: {
+        title: '专题'
       }
     },
     {
