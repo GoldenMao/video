@@ -27,12 +27,18 @@
     width: 60px;
     height: 35px;
     line-height: 35px;
-    transition: all .28s ease-in .1s;
+
   }
-  a:hover{
+
+  a:hover {
+    transition: all .35s ease-in .1s;
     background-color: coral;
     border-radius: 5px;
-    transform:scale(1.1);
     color: #fffccf;
+    transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+
   }
 </style>

@@ -1,8 +1,8 @@
 <template>
 
-  <div class="search">
-    <input type="text" placeholder="  请输入关键词搜索..."/>
-    <div class="search-inner">
+  <div :class="{changeShadow:isTrue}" class="search" >
+    <input type="text" placeholder="请输入关键词搜索..." @focus="inpFocus" @blur="inpBlur"/>
+    <div class="search-inner" >
       <img src="~assets/img/search.png" alt="search"/>
       <span>搜索</span>
     </div>
@@ -12,7 +12,20 @@
 
 <script>
   export default {
-    name: "Search"
+    name: "Search",
+    data(){
+      return {
+        isTrue:false,
+      }
+    },
+    methods:{
+      inpFocus(){
+        this.isTrue=true
+      },
+      inpBlur(){
+        this.isTrue=false
+      }
+    }
   }
 </script>
 
@@ -26,17 +39,24 @@
     justify-content: space-between;
     align-items: center;
     border-radius: 10px;
-
-    box-shadow: 0px 0px 8px 6px rgba(24, 24, 24, 0.6);
+    box-shadow: 5px 5px 10px 5px rgba(24, 24, 24, 0.6);
+  }
+  .changeShadow{
+        box-shadow: 5px 5px 10px 5px rgba(255, 161, 36, 0.6);
   }
 
   input {
     flex: 1;
     line-height: 46px;
     border: none;
-    border-radius: 10px;
-
+    margin-left: 20px ;
+    border-radius: 10px 0 0 10px;
   }
+  input:focus{
+    outline: none;
+    /*outline:#00FF00 dotted red;*/
+    /*border: 1px solid orange;*/
+}
 
   img {
     width: 30px;

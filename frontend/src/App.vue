@@ -26,12 +26,35 @@
   @import "assets/css/base.css";
 
   #app {
-    width: 1190px;
+    /*width: 1190px;*/
+    min-width: 560px;
     height: 100%;
     margin: 0 auto;
   }
 
-  #container{
+  #container {
     margin-top: 20px;
   }
+
+  /*屏幕自适应*/
+  @media screen and (min-width: 1190px) {
+    #app {
+      width: 1190px;
+    }
+  }
+
+  @media screen and (min-width: 960px) and (max-width: 1190px) {
+    #app {
+      width: 960px;
+    }
+
+  }
+
+    @media screen and (min-width: 768px) and (max-width: 960px) {
+    #app {
+      width: 768px;
+    }
+
+  }
+
 </style>
