@@ -34,7 +34,7 @@
     width: 160px;
     height: 240px;
     padding: 5px 10px;
-    margin: 10px;
+    margin: 10px 5px;
     box-shadow: 5px 5px 10px 1px rgba(0, 0, 0,.2);
 
   }
@@ -60,6 +60,7 @@
     justify-content: space-between;
   }
   a:hover{
+    color:orange;
     transition: all .15s ease-in .1s;
     transform: scale(1.15);
     -moz-transform: scale(1.15);
