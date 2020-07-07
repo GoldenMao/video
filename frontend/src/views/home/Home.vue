@@ -1,12 +1,12 @@
 <template>
   <div id="home">
-<!--        <Swiper>-->
-<!--          <swiper-item v-for="item in swiperDatas" :key="item.vid">-->
-<!--            <a :href="'/'+item.type" :title="item.name">-->
-<!--          <img :src="item.imgsrc"/>-->
-<!--        </a>-->
-<!--          </swiper-item>-->
-<!--        </Swiper>-->
+        <Swiper>
+          <swiper-item v-for="item in swiperDatas" :key="item.vid">
+            <a :href="item.type">
+          <img :src="item.imgsrc" alt="item.name"/>
+        </a>
+          </swiper-item>
+        </Swiper>
     <detail-box>
       <h3 slot="title">电影</h3>
       <imgbox-small slot="item_list" :showData="item" v-for=" item in movieData" :key="item.vid">
@@ -31,15 +31,18 @@
 
 <script>
   // import {getHomeMultidata} from "network/home/homeDatas"; //导入js
-  // import {Swiper,SwiperItem} from "components/common/pcswiper"
+  import {Swiper,SwiperItem} from "components/common/pcswiper"
   import DetailBox from "components/content/detail/DetailBox"
   import ImgboxSmall from "components/content/detail/detailItem/ImgboxSmall"  // 导入组件
   import ImgboxMiddle from "components/content/detail/detailItem/ImgboxMiddle"  // 导入组件
   export default {
     name: "Home",
     components: {
-      // Swiper,SwiperItem,
-      DetailBox, ImgboxSmall, ImgboxMiddle,
+      Swiper,
+      SwiperItem,
+      DetailBox,
+      ImgboxSmall,
+      ImgboxMiddle,
     },
     data() {
       return {
@@ -65,8 +68,6 @@
           },
         ],
         movieData: [
-
-
           {
             vid: 1,
             name: '超级战舰',
