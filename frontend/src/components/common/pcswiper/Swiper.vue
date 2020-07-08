@@ -1,7 +1,6 @@
 <template>
   <div id="hy-swiper">
-<!--    <div class="swiper" @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd">-->
-    <div class="swiper">
+    <div class="swiper" @mouseover="mouseOver" @mouseleave="mouseLeave" >
       <slot></slot>
     </div>
     <slot name="indicator">
@@ -139,7 +138,13 @@
         // 4.让swiper元素, 显示第一个(目前是显示前面添加的最后一个元素)
         this.setTransform(-this.totalWidth);
       },
-
+      mouseOver:function(){
+        this.stopTimer();
+        // this.startX = e.touches[0].pageX;
+      },
+      mouseLeave:function(){
+        this.startTimer();
+      },
       /**
        * 拖动事件的处理
        */
