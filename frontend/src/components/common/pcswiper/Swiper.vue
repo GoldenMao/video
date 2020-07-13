@@ -1,6 +1,7 @@
 <template>
   <div id="hy-swiper">
-    <div class="swiper" @mouseover="mouseOver" @mouseleave="mouseLeave" >
+    <div class="swiper" @mouseover="mouseOver" @mouseleave="mouseLeave"
+         @touchstart="touchStart($event)" @touchmove="touchMove($event)" @touchend="touchEnd">
       <slot></slot>
     </div>
     <slot name="indicator">
@@ -139,56 +140,58 @@
         this.setTransform(-this.totalWidth);
       },
       mouseOver:function(){
+        //鼠标悬停 停止计时器
         this.stopTimer();
         // this.startX = e.touches[0].pageX;
       },
       mouseLeave:function(){
+        //鼠标离开 开始计时器
         this.startTimer();
       },
       /**
        * 拖动事件的处理
        */
-      // touchStart: function (e) {
-      //   // 1.如果正在滚动, 不可以拖动
-      //   if (this.scrolling) return;
-      //
-      //   // 2.停止定时器
-      //   this.stopTimer();
-      //
-      //   // 3.保存开始滚动的位置
-      //   this.startX = e.touches[0].pageX;
-      // },
-      //
-      // touchMove: function (e) {
-      //   // 1.计算出用户拖动的距离
-      //   this.currentX = e.touches[0].pageX;
-      //   this.distance = this.currentX - this.startX;
-      //   let currentPosition = -this.currentIndex * this.totalWidth;
-      //   let moveDistance = this.distance + currentPosition;
-      //
-      //   // 2.设置当前的位置
-      //   this.setTransform(moveDistance);
-      // },
-      //
-      // touchEnd: function (e) {
-      //   // 1.获取移动的距离
-      //   let currentMove = Math.abs(this.distance);
-      //
-      //   // 2.判断最终的距离
-      //   if (this.distance === 0) {
-      //     return
-      //   } else if (this.distance > 0 && currentMove > this.totalWidth * this.moveRatio) { // 右边移动超过0.5
-      //     this.currentIndex--
-      //   } else if (this.distance < 0 && currentMove > this.totalWidth * this.moveRatio) { // 向左移动超过0.5
-      //     this.currentIndex++
-      //   }
-      //
-      //   // 3.移动到正确的位置
-      //   this.scrollContent(-this.currentIndex * this.totalWidth);
-      //
-      //   // 4.移动完成后重新开启定时器
-      //   this.startTimer();
-      // },
+      touchStart: function (e) {
+        // 1.如果正在滚动, 不可以拖动
+        if (this.scrolling) return;
+
+        // 2.停止定时器
+        this.stopTimer();
+
+        // 3.保存开始滚动的位置
+        this.startX = e.touches[0].pageX;
+      },
+
+      touchMove: function (e) {
+        // 1.计算出用户拖动的距离
+        this.currentX = e.touches[0].pageX;
+        this.distance = this.currentX - this.startX;
+        let currentPosition = -this.currentIndex * this.totalWidth;
+        let moveDistance = this.distance + currentPosition;
+
+        // 2.设置当前的位置
+        this.setTransform(moveDistance);
+      },
+
+      touchEnd: function () {
+        // 1.获取移动的距离
+        let currentMove = Math.abs(this.distance);
+
+        // 2.判断最终的距离
+        if (this.distance === 0) {
+          return
+        } else if (this.distance > 0 && currentMove > this.totalWidth * this.moveRatio) { // 右边移动超过0.5
+          this.currentIndex--
+        } else if (this.distance < 0 && currentMove > this.totalWidth * this.moveRatio) { // 向左移动超过0.5
+          this.currentIndex++
+        }
+
+        // 3.移动到正确的位置
+        this.scrollContent(-this.currentIndex * this.totalWidth);
+
+        // 4.移动完成后重新开启定时器
+        this.startTimer();
+      },
 
       /**
        * 控制上一个, 下一个
