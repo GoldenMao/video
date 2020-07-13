@@ -1,12 +1,12 @@
 <template>
   <div class="middle">
-    <a class="linkA" :style="{backgroundImage:'url('+showData.imgurl+')'}" :href="showData.type+'/'+showData.vid">
+    <a class="linkA" :style="{backgroundImage:'url('+showData.postimage+')'}" :href="showData.type+'/'+showData.vid">
       <span class="tvnumber"><slot name="tv_series"></slot></span>
     </a>
     <div class="detial">
       <div class="detial1"><a
-        :href="showData.type+'/'+showData.vid">{{showData.name}}</a><span>{{showData.IMDb}}</span></div>
-      <div class="detial2"><span>{{showData.area}}</span><span>{{showData.year}}</span></div>
+        :href="showData.type+'/'+showData.vid">{{showData.vname}}</a><span>{{showData.language}}</span></div>
+      <div class="detial2"><span>{{showData.region}}</span><span>{{showData.year}}</span></div>
     </div>
   </div>
 </template>

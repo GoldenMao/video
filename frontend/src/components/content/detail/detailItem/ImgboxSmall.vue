@@ -1,10 +1,10 @@
 <template>
   <div class="small">
-    <a class="linkA" :style="{backgroundImage:'url('+showData.imgurl+')'}" :href="showData.type+'/'+showData.vid">
+    <a class="linkA" :style="{backgroundImage:'url('+showData.postimage+')'}" :href="showData.type+'/'+showData.vid">
       <span class="tvnumber"><slot name="tv_series"></slot></span>
     </a>
-    <div class="detial1"><a :href="showData.type+'/'+showData.vid">{{showData.name}}</a><span>{{showData.category}}</span></div>
-    <div class="detial2"><span>{{showData.area}}</span><span>{{showData.year}}</span></div>
+    <div class="detial1"><a :href="showData.type+'/'+showData.vid">{{showData.vname}}</a><span>{{showData.category}}</span></div>
+    <div class="detial2"><span>{{showData.region}}</span><span>{{showData.year}}</span></div>
   </div>
 </template>
 
@@ -25,7 +25,7 @@
         console.log(newVal)
         console.log(oldVal)
       },
-    }
+    },
   }
 </script>
 
