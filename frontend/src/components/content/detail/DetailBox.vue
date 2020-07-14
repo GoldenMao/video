@@ -1,8 +1,6 @@
 <template>
   <div class="detial-box">
-    <h2><slot name="title"></slot></h2>
-    <h1></h1>
-
+    <div><slot name="title"></slot></div>
     <div class="item_list">
       <slot name="item_list"></slot>
     </div>
@@ -21,4 +19,5 @@
     display: flex;
     flex-wrap: wrap;
   }
+  h2 {margin-top: 15px;}
 </style>

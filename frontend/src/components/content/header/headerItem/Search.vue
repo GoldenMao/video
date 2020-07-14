@@ -33,7 +33,7 @@
   .search {
     height: 50px;
     width: 500px;
-    margin: 0 auto;
+    margin: 0 auto 30px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -78,5 +78,6 @@
     justify-content: space-between;
     align-items: center;
     border-radius: 0 10px 10px 0;
+    cursor: pointer;
   }
 </style>

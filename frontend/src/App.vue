@@ -30,6 +30,7 @@
     min-width: 620px;
     height: 100%;
     margin: 0 auto;
+    font-size: 14px;
   }
 
   #container {

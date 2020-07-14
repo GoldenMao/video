@@ -1,6 +1,6 @@
 <template>
   <div class="middle">
-    <a class="linkA" :style="{backgroundImage:'url('+showData.postimage+')'}" :href="showData.type+'/'+showData.vid">
+    <a class="linkA" :style="{backgroundImage:'url('+showData.postimage+')'}" :href="'detail?'+showData.vid">
       <span class="tvnumber"><slot name="tv_series"></slot></span>
     </a>
     <div class="detial">

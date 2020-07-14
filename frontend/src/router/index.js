@@ -7,6 +7,7 @@ const Movie = () => import('views/movie/Movie')
 const Tvplay = () => import('views/tvplay/Tvplay')
 const Cartoon = () => import('views/cartoon/Cartoon')
 const Special = () => import('views/special/Special')
+const Detail = () => import('components/content/detail/Detail')
 
 
 
@@ -51,6 +52,13 @@ const router = new Router({
       component: Special,
       meta: {
         title: '专题'
+      }
+    },
+    {
+      path: '/detail',
+      component: Detail,
+      meta: {
+        title: '详情'
       }
     },
     {

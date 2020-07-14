@@ -24,6 +24,9 @@
 </script>
 
 <style scoped>
+  .header{
+    font-size: 16px;
+  }
   .top-bar {
     display: flex;
     align-items: center;

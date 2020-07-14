@@ -2,18 +2,18 @@
   <div id="home">
     <Swiper>
       <swiper-item v-for="item in swiperDatas" :key="item.vid">
-        <a :href="item.type">
+        <a :href="'detail?'+item.vid">
           <img :src="item.imgsrc" alt="item.name"/>
         </a>
       </swiper-item>
     </Swiper>
     <detail-box>
-      <h3 slot="title">电影</h3>
+      <h2 slot="title">电影</h2>
       <imgbox-small slot="item_list" :showData="item" v-for=" item in movieData" :key="item.vid">
       </imgbox-small>
     </detail-box>
     <detail-box>
-      <h3 slot="title">电视剧</h3>
+      <h2 slot="title">电视剧</h2>
       <imgbox-middle slot="item_list" :showData="item" v-for=" item in tvData" :key="item.vid">
       </imgbox-middle>
     </detail-box>
@@ -28,7 +28,6 @@
   import DetailBox from "components/content/detail/DetailBox"
   import ImgboxSmall from "components/content/detail/detailItem/ImgboxSmall"  // 导入组件
   import ImgboxMiddle from "components/content/detail/detailItem/ImgboxMiddle"
-  import ImgboxBig from "components/content/detail/detailItem/ImgboxBig";  // 导入组件
   export default {
     name: "Home",
     components: {
@@ -37,7 +36,6 @@
       DetailBox,
       ImgboxSmall,
       ImgboxMiddle,
-      ImgboxBig,
 
     },
     data() {
@@ -214,30 +212,31 @@
             director: "王利兴 Lixing Wang",
             scenario: "张健 Jian Zhang"
           },
+
           {
             type: 'movie',
 
-            vid: "8414",
-            title: "2020年动作《火云邪神之修罗面具》BD国语中字",
-            postimage: "http://5b0988e595225.cdn.sohucs.com/images/20200418/344cb2dbe9094899aeae117ab4c5ec81.jpeg",
+            vid: "8410",
+            title: "2020年古装悬疑《隐市奇闻录》HD国语中字",
+            postimage: "https://lookimg.com/images/2020/06/29/PK88mH.jpg",
             prscimage: " ",
             year: "2020",
-            showdate: " ",
-            transname: " ",
-            vname: " ",
-            region: " ",
-            category: "喜剧 / 动作 / 奇幻",
+            showdate: "2020-05-23(中国大陆)",
+            transname: "The Hidden Town",
+            vname: "隐市奇闻录",
+            region: "中国大陆",
+            category: "剧情 / 悬疑 / 古装",
             language: "普通话",
             captions: "中文",
-            actors: " ",
-            labels: " ",
-            brief: " ",
+            actors: "['郜思雯 Siwen Gao', '蔡佩池 Peichi Cai', '苑琼丹 King-Tan Yuen', '张晴 Zhang Qing', '卢庆辉 Marco Lo', '钟久夫 Jiufu Zhong', '李耀景 Yiu Ging Lee', '高琳', '姜雯雯 Wenwen Jiang', '赵毅新 Yixin Zhao', '沈凯 Kai Shen', '李瑞超 Ruichao Li', '杨平友 Pingyou Yang', '田钰婧', '唐郁文', '谭琍敏 Limin Tan', '童小梅', '吴祥超', '张萱亿', '彭皓锋 Peter Pang', '袁梓毓', '乐乐']",
+            labels: "悬疑 | 古风 | 奇闻 | 隐市 | 药理人心 | 大陆 | 2020 | 友情",
+            brief: "影片以一座“没有人心，只有规矩”的人间隐市做背景，隐市规矩自成一体，从而形成了一个全新的生存世界及世界观。全片涵盖了“奇谈”、“悬疑”“药理”等多重元素，围绕 “天赋医师”白青萝（郜思雯饰）同“诡案捕快”拾生（蔡佩池饰）的破案经历，揭开了一件件跌宕起伏扣人心弦的悬案谜底，巧思设置既环环相扣又能发人深省。",
             prize: "",
-            downlink: "['ftp://ygdy8:ygdy8@yg18.dydytt.net:5010/阳光电影www.ygdy8.com.火云邪神之修罗面具.HD.2160p.国语中字.mp4']",
+            downlink: "['ftp://ygdy8:ygdy8@yg18.dydytt.net:7033/阳光电影www.ygdy8.com.隐市奇闻录.HD.1080p.国语中字.mp4']",
             imdb: " ",
             douban: " ",
-            director: " ",
-            scenario: " "
+            director: "薛文华 Wenhua Xue",
+            scenario: "叶蘅 Heng Ye"
           },
         ],
         tvData: [
