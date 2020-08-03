@@ -7,7 +7,7 @@ const Movie = () => import('views/movie/Movie')
 const Tvplay = () => import('views/tvplay/Tvplay')
 const Cartoon = () => import('views/cartoon/Cartoon')
 const Special = () => import('views/special/Special')
-const Detail = () => import('components/content/detail/Detail')
+const Detail = () => import('views/detail/Detail')
 
 
 
@@ -55,7 +55,7 @@ const router = new Router({
       }
     },
     {
-      path: '/detail',
+      path: '/detail/:vid',
       component: Detail,
       meta: {
         title: '详情'

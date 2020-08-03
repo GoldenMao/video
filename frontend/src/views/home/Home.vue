@@ -8,12 +8,22 @@
       </swiper-item>
     </Swiper>
     <detail-box>
-      <h2 slot="title">电影</h2>
+      <h2 slot="title">最新电影</h2>
       <imgbox-small slot="item_list" :showData="item" v-for=" item in movieData" :key="item.vid">
       </imgbox-small>
     </detail-box>
     <detail-box>
-      <h2 slot="title">电视剧</h2>
+      <h2 slot="title">精选电影</h2>
+      <imgbox-middle slot="item_list" :showData="item" v-for=" item in tvData" :key="item.vid">
+      </imgbox-middle>
+    </detail-box>
+    <detail-box>
+      <h2 slot="title">国内电影</h2>
+      <imgbox-middle slot="item_list" :showData="item" v-for=" item in tvData" :key="item.vid">
+      </imgbox-middle>
+    </detail-box>
+    <detail-box>
+      <h2 slot="title">欧美电影</h2>
       <imgbox-middle slot="item_list" :showData="item" v-for=" item in tvData" :key="item.vid">
       </imgbox-middle>
     </detail-box>
@@ -529,7 +539,14 @@
       //       console.log(err)
       //     }
       //   );
-    }
+    },
+     methods:{
+      showdetail(vid){
+        // 通过vid想后端请求对应电影详情参数，并保存
+        console.log(vid)
+
+      }
+    },
   }
 </script>
 

@@ -1,11 +1,11 @@
 <template>
   <div class="middle">
-    <a class="linkA" :style="{backgroundImage:'url('+showData.postimage+')'}" :href="'detail?'+showData.vid">
+    <a class="linkA" :style="{backgroundImage:'url('+showData.postimage+')'}" @click="toDetail(showData.vid)">
       <span class="tvnumber"><slot name="tv_series"></slot></span>
     </a>
     <div class="detial">
       <div class="detial1"><a
-        :href="showData.type+'/'+showData.vid">{{showData.vname}}</a><span>{{showData.language}}</span></div>
+        @click="toDetail(showData.vid)">{{showData.vname}}</a><span>{{showData.language}}</span></div>
       <div class="detial2"><span>{{showData.region}}</span><span>{{showData.year}}</span></div>
     </div>
   </div>
@@ -22,12 +22,19 @@
         }
       }
     },
+
     watch: {
       // 监测父组件传递的数据,实时更新给子组件保存
       showData: function (newVal, oldVal) {
         console.log(newVal)
         console.log(oldVal)
       },
+    },
+    methods:{
+      toDetail(vid){
+        this.$router.push('/detail/'+vid)
+        // this.$router.push({name: 'Detail', params: {vid: vid}})
+    },
     }
   }
 </script>
@@ -74,6 +81,9 @@
   .detial1 , .detial2{
     display: flex;
     justify-content: space-between;
+  }
+  a{
+    cursor: pointer;
   }
   a:hover {
     color:orange;

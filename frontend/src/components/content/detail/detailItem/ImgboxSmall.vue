@@ -1,9 +1,9 @@
 <template>
   <div class="small">
-    <a class="linkA" :style="{backgroundImage:'url('+showData.postimage+')'}" :href="'detail?'+showData.vid">
+    <a class="linkA" :style="{backgroundImage:'url('+showData.postimage+')'}" @click="toDetail(showData.vid)">
       <span class="tvnumber"><slot name="tv_series"></slot></span>
     </a>
-    <div class="detial1"><a :href="showData.type+'/'+showData.vid">{{showData.vname}}</a><span>{{showData.category}}</span></div>
+    <div class="detial1"><a @click="toDetail(showData.vid)">{{showData.vname}}</a><span>{{showData.category}}</span></div>
     <div class="detial2"><span>{{showData.region}}</span><span>{{showData.year}}</span></div>
   </div>
 </template>
@@ -26,6 +26,12 @@
         console.log(oldVal)
       },
     },
+    methods:{
+      toDetail(vid){
+        this.$router.push('/detail/'+vid)
+        // this.$router.push({name: 'Detail', params: {vid: vid}})
+    },
+    }
   }
 </script>
 
@@ -58,6 +64,9 @@
     line-height: 25px;
     display:flex;
     justify-content: space-between;
+  }
+  a{
+    cursor: pointer;
   }
   a:hover{
     color:orange;

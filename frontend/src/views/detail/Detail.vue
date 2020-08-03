@@ -25,7 +25,7 @@
         <li class="li_item"><span class="lef-span">简 介：</span><span>{{detailData.brief}}</span></li>
       </ul>
       <h3>下载链接：</h3>
-      <a :href="detailData.downlink.slice(2,-2)">{{detailData.title}}<span>(右键复制链接地址下载)</span></a>
+      <a :href="detailData.downlink">{{detailData.title}}<span>(右键复制链接地址下载)</span></a>
     </div>
 
 
@@ -33,39 +33,25 @@
 </template>
 
 <script>
+  import {getOneMovieData} from "network/detail/detailDatas"
+
   export default {
     name: "Detail",
     data() {
       return {
-        detailData:
-          {
-            type: 'movie',
-
-            vid: "8412",
-            title: "2020年动作奇幻《天启大爆炸》HD国语中字",
-            postimage: "https://lookimg.com/images/2020/06/23/PBeZEe.jpg",
-            prscimage: " ",
-            year: "2020",
-            showdate: "2020-06-11(中国大陆)",
-            transname: " ",
-            vname: "天启大爆炸",
-            region: "中国大陆/中国香港",
-            category: "动作 / 奇幻 / 古装",
-            language: "普通话",
-            captions: "中文",
-            actors: "['郭晋东 Ryan Kuo', '黄柳嫣', '梁家仁 Ka-Yan Leung', '邓威', '脑门额尔德尼 Naomen Eerdeni']",
-            labels: " ",
-            brief: "《天启大爆炸》以中国古代曾真实发生的神秘爆炸为原型，加以天马行空的巧妙构思，为观众解封至今困惑世人的隐秘真相。神秘机构“夜行司”追踪离奇谜团勇闯“无相城”，一场关乎百姓苍生命运博弈就此展开。",
-            prize: "",
-            downlink: "['ftp://ygdy8:ygdy8@yg18.dydytt.net:7031/阳光电影www.ygdy8.com.天启大爆炸.HD.2160p.国语中字.mp4']",
-            imdb: " ",
-            douban: "4.2/10 from 762 users",
-            director: "黄羿 Yi Huang / 曾黎",
-            scenario: " "
-          },
-
+        detailData:{}
       }
-    }
+    },
+    created(){
+      const vid = this.$route.params.vid
+      console.log('activated',vid)
+      getOneMovieData(vid).then(
+          res => this.detailData=res[0]
+        ).catch(
+          err => console.log(err)
+        )
+    },
+
   }
 </script>
 
