@@ -1,5 +1,5 @@
 <template>
-  <div id="logo">
+  <div id="logo" @click="toHome">
     <img src="~assets/img/logo.png" alt="logo"/>
     <span>X X 电影</span>
   </div>
@@ -7,7 +7,12 @@
 
 <script>
   export default {
-    name: "Logo"
+    name: "Logo",
+    methods:{
+      toHome(){
+        this.$router.push('/home')
+      }
+    }
   }
 </script>
 
@@ -19,6 +24,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
   }
 
   img {

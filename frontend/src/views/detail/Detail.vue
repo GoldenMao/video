@@ -43,10 +43,11 @@
       }
     },
     created(){
+      // 在加载组件时，获取路由中的vid数值，传递给后端查询对应vid的单条数据，并将结果保存在detailData中
       const vid = this.$route.params.vid
       console.log('activated',vid)
       getOneMovieData(vid).then(
-          res => this.detailData=res[0]
+          res => this.detailData=res.detaildata[0]
         ).catch(
           err => console.log(err)
         )

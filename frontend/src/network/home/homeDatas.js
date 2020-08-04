@@ -5,7 +5,7 @@ export function getHomeMultidata() {
   return request({
     url:'/api/home',
     method:'get',
-    // data: {
+    // params: {
     //     userName: 'Lan',
     //     password: '123'
     // }
@@ -17,7 +17,7 @@ export function getMovieMultidata() {
   return request({
     url:'/api/Movie',
     method:'get',
-    // data: {
+    // params: {
     //     userName: 'Lan',
     //     password: '123'
     // }
@@ -29,7 +29,7 @@ export function getTvshowMultidata() {
   return request({
     url:'/api/Tvshow',
     method:'get',
-    // data: {
+    // params: {
     //     userName: 'Lan',
     //     password: '123'
     // }
