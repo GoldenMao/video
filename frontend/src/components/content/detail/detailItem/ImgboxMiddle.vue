@@ -1,11 +1,11 @@
 <template>
   <div class="middle">
-    <a class="linkA" :style="{backgroundImage:'url('+showData.postimage+')'}" @click="toDetail(showData.vid)">
+    <a class="linkA" :style="{backgroundImage:'url('+showData.postimage+')'}" :title="showData.vname" @click="toDetail(showData.vid)">
       <span class="tvnumber"><slot name="tv_series"></slot></span>
     </a>
     <div class="detial">
       <div class="detial1"><a
-        @click="toDetail(showData.vid)">{{showData.vname}}</a><span>{{showData.language}}</span></div>
+        @click="toDetail(showData.vid)" :title="showData.vname">{{showData.vname}}</a><span>{{showData.language}}</span></div>
       <div class="detial2"><span>{{showData.region}}</span><span>{{showData.year}}</span></div>
     </div>
   </div>

@@ -1,10 +1,10 @@
 <template>
   <div class="small">
-    <a class="linkA" :style="{backgroundImage:'url('+showData.postimage+')'}" @click="toDetail(showData.vid)">
+    <a class="linkA" :style="{backgroundImage:'url('+showData.postimage+')'}" :title="showData.vname" @click="toDetail(showData.vid)">
       <span class="tvnumber"><slot name="tv_series"></slot></span>
     </a>
-    <div class="detial1"><a @click="toDetail(showData.vid)">{{showData.vname}}</a><span>{{showData.category}}</span></div>
-    <div class="detial2"><span>{{showData.region}}</span><span>{{showData.year}}</span></div>
+    <div class="detial1"><a :title="showData.vname" @click="toDetail(showData.vid)">{{showData.vname | forShort}}</a><span>{{showData.category |forShort}}</span></div>
+    <div class="detial2"><span>{{showData.region  |forShort}}</span><span>{{showData.year}}</span></div>
   </div>
 </template>
 
@@ -31,6 +31,11 @@
         this.$router.push('/detail/'+vid)
         // this.$router.push({name: 'Detail', params: {vid: vid}})
     },
+    },
+    filters:{
+      forShort(original){
+        return original.trim().slice(0,4)+".."
+      }
     }
   }
 </script>

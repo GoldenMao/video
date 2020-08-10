@@ -1,10 +1,10 @@
 <template>
   <div class="RightNavbar">
-    <router-link to="/home">首页</router-link>
-    <router-link to="/movie">电影</router-link>
-    <router-link to="/tvplay">电视剧</router-link>
-    <router-link to="/cartoon">动漫</router-link>
-    <router-link to="/special">专题</router-link>
+    <router-link to="/home" replace>首页</router-link>
+    <router-link to="/movie" replace>电影</router-link>
+    <router-link to="/tvplay" replace>电视剧</router-link>
+    <router-link to="/cartoon" replace>动漫</router-link>
+    <router-link to="/special" replace>专题</router-link>
   </div>
 </template>
 

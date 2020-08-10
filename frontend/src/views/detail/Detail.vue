@@ -39,7 +39,7 @@
     name: "Detail",
     data() {
       return {
-        detailData:{}
+        detailData:null
       }
     },
     created(){
